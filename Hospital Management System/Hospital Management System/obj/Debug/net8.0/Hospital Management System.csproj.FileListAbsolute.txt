@@ -1,0 +1,15 @@
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\bin\Debug\net8.0\Hospital Management System.exe
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\bin\Debug\net8.0\Hospital Management System.deps.json
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\bin\Debug\net8.0\Hospital Management System.runtimeconfig.json
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\bin\Debug\net8.0\Hospital Management System.dll
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\bin\Debug\net8.0\Hospital Management System.pdb
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.AssemblyInfoInputs.cache
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.AssemblyInfo.cs
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.csproj.CoreCompileInputs.cache
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.sourcelink.json
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.dll
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\refint\Hospital Management System.dll
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.pdb
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\Hospital Management System.genruntimeconfig.cache
+C:\Users\widaa\OneDrive\Desktop\Backend-Soultion\Hospital Management System\Hospital Management System\obj\Debug\net8.0\ref\Hospital Management System.dll
