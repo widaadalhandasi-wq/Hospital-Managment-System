@@ -13,6 +13,7 @@ namespace Hospital_Management_System.Models
         public string slotDate { get; set; }
         public string slotTime { get; set; }
         public bool isBooked { get; set; }
-
+    
     }
 }
+

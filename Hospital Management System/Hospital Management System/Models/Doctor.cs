@@ -15,5 +15,6 @@ namespace Hospital_Management_System.Models
         public string doctorEmail { get; set; }
         public decimal consultationFee { get; set; }
 
+      
     }
 }
