@@ -173,7 +173,7 @@ namespace Hospital_Management_System
                 isBooked = false        //availabel to booked
             });
 
-            Console.WriteLine("The slot has been added successfully.");
+            Console.WriteLine($"The slot has been added successfully.{slotId}");
         }
 
         //6)  Book an Appointment
