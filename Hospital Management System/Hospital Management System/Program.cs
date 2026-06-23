@@ -9,9 +9,29 @@ namespace Hospital_Management_System
 {
     public class Program
     {
-        //1) Patient Registration
-        public static void PatientRegistration(List<Patient> Patients)
+        public static HospitalContext context = new HospitalContext
         {
+            Patients = new List<Patient>() 
+            {
+            new Patient(1, "Widaad", 27, "Female", "12345678", "widaad@gmail.com", "O+"),
+            new Patient(2, "Ebtisaam", 27, "Female", "12342278", "Ebtisaam@gmail.com", "O+"),
+            new Patient(3, "Fathia", 30, "Female", "99345678", "Fathia@gmail.com", "O+"),
+            new Patient(4, "Maya", 25, "Female", "77345678", "Maya@gmail.com", "O+"),
+            new Patient(5, "Malak", 27, "Female", "22345678", "malak@gmail.com", "O+")
+            },
+            Doctors = new List<Doctor>(),
+            Appointments = new List<Appointment>(),
+            MedicalRecords = new List<MedicalRecord>(),
+            AvailableSlots = new List<AvailableSlot>()
+        };
+
+      
+
+    //1) Patient Registration
+    public static void PatientRegistration(List<Patient> Patients)
+        {
+            Console.WriteLine("\n=== Register New Patient ===");
+
             //Ask patient's about personal information
             Console.WriteLine("Enter Your Patient Name:");
             string name = Console.ReadLine();
@@ -52,6 +72,8 @@ namespace Hospital_Management_System
         //2)  Add a New Doctor
         public static void AddaNewDoctor(List<Doctor> Doctors)
         {
+            Console.WriteLine("\n=== Add New Doctor ===");
+
             //Ask Doctors's about personal information
             Console.WriteLine("Enter Your Doctor Name:");
             string DoctorName = Console.ReadLine();
@@ -97,26 +119,28 @@ namespace Hospital_Management_System
             {
                 p.PrintPatients();
             }
-        }
 
+        }
 
         //4)  View All Doctors by Specialization
         public static void ViewAllDoctorsbySpecialization(List<Doctor> Doctors)
         {
-          
+            Console.WriteLine("\n=== Search Doctors by Specialization ===");
+
             Console.WriteLine("Enter Doctor Specialization:");
             string specialization = Console.ReadLine();
 
-           
+
             //linq
 
-            List<Doctor> doctorLists=Doctors.Where(d =>d.doctorSpecialization == specialization).ToList();
+            List<Doctor> doctorLists = Doctors.Where(d => d.doctorSpecialization.ToLower() == specialization).ToList();
 
-            if (doctorLists.Count==0) 
+            if (doctorLists.Count == 0)
             {
                 Console.WriteLine("No Doctors found with this specialization.");
-                return ;
+                return;
             }
+
 
             doctorLists.ForEach(Doctor => Console.WriteLine($"Doctor ID: {Doctor.doctorId}  , Doctor Name: {Doctor.doctorName} , Doctor Specialization: {Doctor.doctorSpecialization}"));
 
@@ -124,17 +148,27 @@ namespace Hospital_Management_System
 
             //or 
 
-            //foreach (Doctor doctor in doctorLists)
-            //{
-            //    Console.WriteLine("Did= " + doctor.doctorId + " Dr Name: " + doctor.doctorName);
-
-            //}
+            //    foreach (Doctor doctor in doctorLists)
+            //    {
+            //        Console.WriteLine($"ID: {doctor.doctorId}  |  Name: {doctor.doctorName}" +
+            //                          $"  |  Phone: {doctor.doctorPhone}  |  Fee: {doctor.consultationFee:C}");
+            //    //}
 
         }
+
 
         //5)  Add an Available Time Slot for a Doctor
         public static void AddanAvailableTimeSlotforaDoctor(HospitalContext context)
         {
+            Console.WriteLine("\n=== Add Available Slot for Doctor ===");
+
+            //foreach (Doctor d in context.Doctors)
+            //{
+            //    Console.WriteLine($"  ID: {d.doctorId}  |  {d.doctorName}  ({d.doctorSpecialization})");
+            //}
+
+            //or
+
             //linq
             List<Doctor> doctorLists = context.Doctors.ToList();
 
@@ -177,8 +211,10 @@ namespace Hospital_Management_System
         }
 
         //6)  Book an Appointment
-        public static void BookanAppointment(HospitalContext context)
+        public static void BookanAppointment(HospitalContext context) //create / add 
         {
+            Console.WriteLine("\n=== Book an Appointment ===");
+
             //patient
             Console.WriteLine("Enter Patient ID");
             int patientID = Convert.ToInt32(Console.ReadLine());
@@ -404,8 +440,6 @@ namespace Hospital_Management_System
           
         }
 
-        
-
         //10) Doctor Workload and Revenue Summary
         public static void DoctorWorkloadandRevenueSummary(HospitalContext context)
         {
@@ -453,21 +487,21 @@ namespace Hospital_Management_System
        
         public static void Main(string[] args)
         {
-            HospitalContext mainContext = new HospitalContext();
-            mainContext.Doctors = new List<Doctor>();
-            mainContext.Appointments = new List<Appointment>();
-            mainContext.MedicalRecords = new List<MedicalRecord>();
-            mainContext.AvailableSlots = new List<AvailableSlot>();
+            //HospitalContext mainContext = new HospitalContext();
+            //mainContext.Doctors = new List<Doctor>();
+            //mainContext.Appointments = new List<Appointment>();
+            //mainContext.MedicalRecords = new List<MedicalRecord>();
+            //mainContext.AvailableSlots = new List<AvailableSlot>();
 
-            //SEED DATA
-            mainContext.Patients = new List<Patient>()
-            {
-                new Patient(1,"Widaad",27,"Female","12345678","widaad@gmail.com","O+"),
-                new Patient(2,"Ebtisaam",27,"Female","12342278","Ebtisaam@gmail.com","O+"),
-                new Patient(3,"Fathia",30,"Female","99345678","Fathia@gmail.com","O+"),
-                new Patient(4,"Maya",25,"Female","77345678","Maya@gmail.com","O+"),
-                new Patient(5,"Malak",27,"Female","22345678","widaad@gmail.com","O+"),
-            };
+            ////SEED DATA
+            //mainContext.Patients = new List<Patient>()
+            //{
+            //    new Patient(1,"Widaad",27,"Female","12345678","widaad@gmail.com","O+"),
+            //    new Patient(2,"Ebtisaam",27,"Female","12342278","Ebtisaam@gmail.com","O+"),
+            //    new Patient(3,"Fathia",30,"Female","99345678","Fathia@gmail.com","O+"),
+            //    new Patient(4,"Maya",25,"Female","77345678","Maya@gmail.com","O+"),
+            //    new Patient(5,"Malak",27,"Female","22345678","widaad@gmail.com","O+"),
+            //};
 
 
 
@@ -494,34 +528,34 @@ namespace Hospital_Management_System
                 switch (option)
                 {
                     case 1:
-                        PatientRegistration(mainContext.Patients);
+                        PatientRegistration(context.Patients);
                         break;
                     case 2:
-                        AddaNewDoctor(mainContext.Doctors);
+                        AddaNewDoctor(context.Doctors);
                         break;
                     case 3:
-                        ViewAllPatients(mainContext.Patients);
+                        ViewAllPatients(context.Patients);
                         break;
                     case 4:
-                        ViewAllDoctorsbySpecialization(mainContext.Doctors);
+                        ViewAllDoctorsbySpecialization(context.Doctors);
                         break;
                     case 5:
-                        AddanAvailableTimeSlotforaDoctor(mainContext);
+                        AddanAvailableTimeSlotforaDoctor(context);
                         break;
                     case 6:
-                        BookanAppointment(mainContext);
+                        BookanAppointment(context);
                         break;
                     case 7:
-                        CancelanAppointment(mainContext);
+                        CancelanAppointment(context);
                         break;
                     case 8:
-                        CreateaMedicalRecordAfteraVisit(mainContext);
+                        CreateaMedicalRecordAfteraVisit(context);
                         break;
                     case 9:
-                        GenerateaPatientMedicalHistoryReport(mainContext);
+                        GenerateaPatientMedicalHistoryReport(context);
                         break;
                     case 10:
-                        DoctorWorkloadandRevenueSummary(mainContext);
+                        DoctorWorkloadandRevenueSummary(context);
                         break;
                     case 0:
                         exit = true;
