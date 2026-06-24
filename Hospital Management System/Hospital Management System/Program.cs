@@ -304,11 +304,6 @@ namespace Hospital_Management_System
                 return;
             }
 
-            if (appointment.status == "Completed")
-            {
-                Console.WriteLine("This appointment is already cancelled.");
-                return;
-            }
          
 
             // LINQ 
